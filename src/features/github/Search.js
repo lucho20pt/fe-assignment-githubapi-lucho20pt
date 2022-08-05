@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import { useGetUserNameMutation } from 'features/api/githubApi'
 import classes from 'styles/github/Search.module.scss'
+import { useGetUserNameMutation } from 'features/api/githubApi'
+import { githubActions } from 'features/github/githubSlice'
+import { useDispatch } from 'react-redux'
 
 const Search = (props) => {
   //
   const [search, setSearch] = useState('')
   const [getUserName] = useGetUserNameMutation()
+  const dispatch = useDispatch()
 
   const [error, setError] = useState(false)
   const timeout = 2000
@@ -32,8 +35,8 @@ const Search = (props) => {
     try {
       // get response
       const userResponse = await getUserName(user).unwrap()
-      console.log('userObj ->', userResponse)
-      // dispatch(githubActions.addCity(userResponse))
+      // console.log('userObj ->', userResponse)
+      dispatch(githubActions.addUser(userResponse))
       // onSuccessHandler()
     } catch (error) {
       // console.log('error -> ', error.status)

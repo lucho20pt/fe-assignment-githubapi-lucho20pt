@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className={classes.header}>
+    <header className={classes.header}>
       <div className={classes.logo}>
         <Link to="/">github</Link>
       </div>
@@ -35,7 +35,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   )
 }
 

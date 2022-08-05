@@ -1,0 +1,29 @@
+@import "styles/custom.scss";
+.about{
+    border: 1px solid $orange;
+    padding: 1rem;
+
+    ul, li{        
+        margin: .5rem; padding: .5rem;
+        margin-top: 0; padding-top: 0; 
+        list-style: disc;
+        & h2, h3, h4 {
+            margin: 0; padding: 0; 
+        }        
+    }
+
+    li{
+        ul{
+            margin-top: .5rem; padding-top: .5rem;
+            li{ 
+                list-style: circle;
+            }
+        }                
+    }
+
+    hr{
+        height: 1px;
+        background-color: $purple;
+        border: none;
+    }    
+}

@@ -7,11 +7,13 @@ export const githubApi = createApi({
   }),
   tagTypes: ['Users'],
   endpoints: (builder) => ({
-    getUserName: builder.query({
-      query: ({ username }) => `users/${username}`,
-      providesTags: ['Users']
+    getUserName: builder.mutation({
+      query: (username) => ({
+        url: `users/${username}`,
+        method: 'GET'
+      })
     })
   })
 })
 
-export const { useGetUserNameQuery } = githubApi
+export const { useGetUserNameMutation } = githubApi

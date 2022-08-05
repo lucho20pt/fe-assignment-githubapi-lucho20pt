@@ -1,0 +1,47 @@
+@import "styles/custom.scss";
+
+.header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  padding: 0 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $black;
+  border-bottom: 2px solid $purple;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+  & > a {
+    text-decoration: none;
+    color: $orange;
+    &:hover{
+      color: $yellow;
+    }
+  }
+}
+
+.nav {
+  ul {
+    display: flex;
+  }
+  li {
+    margin-left: 1.25rem;
+    font-size: 1.25rem;
+  }
+  a {
+    text-decoration: none;
+    color: $purple;
+    &:hover,
+    &:active,
+    &.active {
+      color: $white;
+      // text-decoration: underline;
+    }
+  }  
+}
+
+

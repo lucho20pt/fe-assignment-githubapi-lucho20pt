@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { useGetUserNameMutation } from 'features/api/githubApi'
 import classes from 'styles/github/Search.module.scss'
 
 const Search = (props) => {
   //
   const [search, setSearch] = useState('')
+  const [getUserName] = useGetUserNameMutation()
 
   const [error, setError] = useState(false)
   const timeout = 2000
@@ -24,7 +26,20 @@ const Search = (props) => {
       onErrorHandler()
       return true
     }
-    console.log('user ->', user)
+    // console.log('user ->', user)
+
+    // request / result / verify
+    try {
+      // get response
+      const userResponse = await getUserName(user).unwrap()
+      console.log('userObj ->', userResponse)
+      // dispatch(githubActions.addCity(userResponse))
+      // onSuccessHandler()
+    } catch (error) {
+      // console.log('error -> ', error.status)
+      // console.log('error -> ', error.data.message)
+      onErrorHandler()
+    }
   }
 
   // Error

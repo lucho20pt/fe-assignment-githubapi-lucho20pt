@@ -1,0 +1,90 @@
+@import "styles/custom.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+/* reset && global structure */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+ul,li,dl,dt,dd{
+  margin: 0; padding: 0; list-style: none;
+}
+
+html, body{
+  width: 100%; height: 100%; margin: 0; padding: 0;
+}
+
+html, body{
+  font-size: 16px;
+  color: $light;
+  background-color: $dark;
+  font-family: 'Open Sans', sans-serif; 
+}
+
+body {  
+  height: auto;
+}
+
+.container{
+  display: block;
+  padding: 0 2rem;
+}
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row{ 
+  display:flex;
+  &-block{
+    display: block;
+  }
+}
+
+.text{
+  &-start{
+    text-align: left;
+  }
+  &-center{
+    text-align: center;
+  }
+  &-end{
+    text-align: right;
+  }
+}
+
+.focused {
+  font-size: 3rem;
+  font-weight: bold;
+  color: $white;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: $teal;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid $dark;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  &-small{
+    font-size: 1rem;
+    padding: 0.5rem 1.0rem;
+  }
+  &-large{
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+  }
+  &:hover,
+  &:active {
+    background-color: $orange;
+    border-color: $cyan;
+  }
+}
+
+
+

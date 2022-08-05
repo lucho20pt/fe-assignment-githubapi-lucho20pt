@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Search from 'components/github/Search'
+import Search from 'features/github/Search'
 
 const Home = () => {
   return (

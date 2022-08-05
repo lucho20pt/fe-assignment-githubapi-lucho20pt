@@ -1,10 +1,8 @@
-import { Route, Routes, Navigate } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import NotFound from "components/layout/NotFound";
-import Home from "./pages/Home";
-import About from "./pages/About";
-// import QuoteDetail from "./pages/QuoteDetail";
-// import NewQuote from "./pages/NewQuote";
+import { Route, Routes, Navigate } from 'react-router-dom'
+import Layout from './components/layout/Layout'
+import NotFound from 'components/layout/NotFound'
+import Home from './pages/Home'
+import About from './pages/About'
 
 function App() {
   return (

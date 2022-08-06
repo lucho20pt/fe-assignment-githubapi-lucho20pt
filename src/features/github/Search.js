@@ -55,8 +55,6 @@ const Search = (props) => {
 
   return (
     <div className={`${classes.search} ${'centered'}`}>
-      <h2 className="subtitle text-center">Start Searching for Github User</h2>
-      <br />
       <form onSubmit={submitHandler}>
         <div className="row">
           <input

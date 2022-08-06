@@ -12,17 +12,9 @@ const Header = () => {
           <li>
             <NavLink
               className={(navData) => (navData.isActive ? classes.active : '')}
-              to="/quotes"
+              to="/search"
             >
-              All Quotes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={(navData) => (navData.isActive ? classes.active : '')}
-              to="/new-quote"
-            >
-              Add Quote
+              Search
             </NavLink>
           </li>
           <li>

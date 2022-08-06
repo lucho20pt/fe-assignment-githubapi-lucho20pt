@@ -2,6 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import NotFound from 'components/layout/NotFound'
 import Home from './pages/Home'
+import Search from './pages/Search'
 import About from './pages/About'
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
 
         <Route path="/home" element={<Home />} />
+
+        <Route path="/search" element={<Search />} />
 
         <Route path="/about" element={<About />} />
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Search from 'features/github/Search'
 
 const Home = () => {
   return (
@@ -13,11 +12,24 @@ const Home = () => {
         </p>
         <p>
           <Link className="btn btn-small" to="/about">
-            click here
+            Read About
           </Link>
         </p>
       </div>
-      <Search />
+      <h2 className="title text-center">Start Your Search for Github User by typing the username</h2>
+      <div className="centered">
+        <p>
+          <strong>The search page</strong> - It needs to have at least one input
+          to type the Github username you want to search for and a button that
+          will trigger the search.          
+        </p>
+        <p>Click on the button to test it out</p>
+        <p>
+          <Link className="btn btn-small" to="/search">
+            Search
+          </Link>
+        </p>
+      </div>
     </section>
   )
 }

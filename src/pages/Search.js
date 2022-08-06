@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section className="container">
       <h1 className="title text-center">Search</h1>
-      <p className="text-center">Type the username on the search field and make your search</p>
+      <h2 className="text-center">Type the username on the search field and do your search</h2>
       <Searcher />
     </section>
   )

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialGithubState = {
-  users: [],
+  users: [{ id: 0 }],
   changed: false
 }
 
@@ -18,6 +18,7 @@ const githubSlice = createSlice({
       if (!existingUser) {
         state.users.unshift(newUser)
       }
+      console.log(state.users[0])
     },
     removeUser(state, action) {
       //   console.log('removeUser')

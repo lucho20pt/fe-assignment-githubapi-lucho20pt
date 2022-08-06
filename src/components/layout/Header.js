@@ -1,7 +1,10 @@
 import classes from 'styles/layout/MainNavigation.module.scss'
 import { Link, NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+  const userId = useSelector((state) => state.github.users[0].id)
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -20,7 +23,8 @@ const Header = () => {
           <li>
             <NavLink
               className={(navData) => (navData.isActive ? classes.active : '')}
-              to="/user/*"
+              // to="/user/:userId/*"
+              to={`/user/${userId}/`}
             >
               User
             </NavLink>

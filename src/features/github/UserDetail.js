@@ -16,7 +16,7 @@ const UserDetail = (props) => {
     content = <NoUser />
   }
   // render user Profile
-  if (user.id === Number(userId)) {
+  if (user.id !== 0 && user.id === Number(userId)) {
     content = (
       <Fragment>
         <h3>A page to display the user information and repositories. </h3>
@@ -31,7 +31,8 @@ const UserDetail = (props) => {
 
   return (
     <article className={`${classes.userdetail} ${'centered'}`}>
-      id: {user?.id}
+      id: {user.id} <br />
+      paramsID: {userId}
       {content}
     </article>
   )

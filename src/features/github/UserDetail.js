@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from 'react'
-import { Route, Routes, useParams, Link } from 'react-router-dom'
+import React, { Fragment } from 'react'
+import { useParams, Link } from 'react-router-dom'
 import classes from 'styles/github/UserDetail.module.scss'
 import { useSelector } from 'react-redux'
 import NoUser from './NoUser'

@@ -1,9 +1,13 @@
 @import "styles/custom.scss";
 
-.search{
+.searcher{
+    form{
+        display: block;
+        padding: 0 2rem;
+    }
     input[type=text]{
         background: $white;
-        padding: .5rem;
+        padding: .2rem;
         color: $purple;
         border: 2px solid $purple;
         border-radius: 5px;

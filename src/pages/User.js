@@ -4,7 +4,7 @@ import UserDetail from 'features/github/UserDetail'
 
 const Home = () => {
   return (
-    <section className="container">
+    <section className="content">
       <h1 className="title text-center">User Profile</h1>
 
       <UserDetail />

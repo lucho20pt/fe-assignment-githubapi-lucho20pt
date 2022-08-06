@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <section className="container">
+    <section className="content">
       <h1 className="title text-center">Wellcome Home</h1>
       <div className="centered">
         <p>
@@ -16,7 +16,7 @@ const Home = () => {
           </Link>
         </p>
       </div>
-      <h2 className="title text-center">Start Your Search for Github User by typing the username</h2>
+      <h2 className="title text-center">Search for Github User by typing the username</h2>
       <div className="centered">
         <p>
           <strong>The search page</strong> - It needs to have at least one input

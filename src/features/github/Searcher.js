@@ -66,7 +66,7 @@ const Searcher = (props) => {
   }
 
   return (
-    <div className={`${classes.search} ${'centered'}`}>
+    <div className={`${classes.searcher} ${'centered'}`}>
       <form onSubmit={submitHandler}>
         <div className="row">
           <input

@@ -4,7 +4,7 @@ import classes from 'styles/pages/About.module.scss'
 
 const About = () => {
   return (
-    <section className="container">
+    <section className="content">
       <h1 className="title text-center">About the app</h1>
       <article className={classes.about}>
         <h2>About the challenge</h2>

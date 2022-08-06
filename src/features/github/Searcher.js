@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import classes from 'styles/github/Search.module.scss'
 import { useGetUserNameMutation } from 'features/api/githubApi'
 import { githubActions } from 'features/github/githubSlice'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-const Search = (props) => {
+const Searcher = (props) => {
   //
+  const userId = useSelector((state) => state.github.users[0].id)
   const [search, setSearch] = useState('')
   const [getUserName] = useGetUserNameMutation()
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [error, setError] = useState(false)
   const timeout = 2000
@@ -37,7 +40,7 @@ const Search = (props) => {
       const userResponse = await getUserName(user).unwrap()
       // console.log('userObj ->', userResponse)
       dispatch(githubActions.addUser(userResponse))
-      // onSuccessHandler()
+      onSuccessHandler()
     } catch (error) {
       // console.log('error -> ', error.status)
       // console.log('error -> ', error.data.message)
@@ -51,6 +54,16 @@ const Search = (props) => {
     setTimeout(() => {
       setError(false)
     }, timeout)
+  }
+
+  // Success
+  const onSuccessHandler = () => {
+    setTimeout(() => {
+      // clear form
+      setSearch('')
+      // navigate to User Page
+      navigate(`/user/${userId}/`)
+    }, 1)
   }
 
   return (
@@ -75,4 +88,4 @@ const Search = (props) => {
   )
 }
 
-export default Search
+export default Searcher

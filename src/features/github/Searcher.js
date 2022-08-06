@@ -2,12 +2,11 @@ import React, { useState } from 'react'
 import classes from 'styles/github/Search.module.scss'
 import { useGetUserNameMutation } from 'features/api/githubApi'
 import { githubActions } from 'features/github/githubSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const Searcher = (props) => {
   //
-  const userId = useSelector((state) => state.github.users[0].id)
   const [search, setSearch] = useState('')
   const [getUserName] = useGetUserNameMutation()
   const dispatch = useDispatch()
@@ -32,15 +31,15 @@ const Searcher = (props) => {
       onErrorHandler()
       return true
     }
-    // console.log('user ->', user)
 
     // request / result / verify
     try {
       // get response
       const userResponse = await getUserName(user).unwrap()
+      const { id: userId } = userResponse
       // console.log('userObj ->', userResponse)
       dispatch(githubActions.addUser(userResponse))
-      onSuccessHandler()
+      onSuccessHandler(userId)
     } catch (error) {
       // console.log('error -> ', error.status)
       // console.log('error -> ', error.data.message)
@@ -57,7 +56,7 @@ const Searcher = (props) => {
   }
 
   // Success
-  const onSuccessHandler = () => {
+  const onSuccessHandler = (userId) => {
     setTimeout(() => {
       // clear form
       setSearch('')

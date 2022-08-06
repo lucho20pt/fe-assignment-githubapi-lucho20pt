@@ -14,11 +14,15 @@ const githubSlice = createSlice({
       const newUser = action.payload
       // console.log(newUser);
       const existingUser = state.users.find((user) => user.id === newUser.id)
-      state.changed = true
+      state.changed = false
       if (!existingUser) {
-        state.users.unshift(newUser)
+        state.users = []
+        state.users.push(newUser)
+        state.changed = true
       }
       console.log(state.users[0])
+      // console.log(state.users.length)
+      // console.log('isStateChange ->', state.changed)
     },
     removeUser(state, action) {
       //   console.log('removeUser')

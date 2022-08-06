@@ -20,6 +20,14 @@ const Header = () => {
           <li>
             <NavLink
               className={(navData) => (navData.isActive ? classes.active : '')}
+              to="/user/*"
+            >
+              User
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={(navData) => (navData.isActive ? classes.active : '')}
               to="/about"
             >
               About

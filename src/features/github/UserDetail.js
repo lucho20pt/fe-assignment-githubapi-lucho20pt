@@ -23,13 +23,13 @@ const UserDetail = (props) => {
     content = (
       <Fragment>
         <h3>A page to display the user information and repositories. </h3>
-        <div className="row-block">
+        <div className={classes.details}>
           <Profile user={{ ...user }} />
           <Repositories repository={{ ...repository }} />
         </div>
         <p>
           <Link className="btn btn-small" to="/search">
-            Go Back
+            Go Back to Search
           </Link>
         </p>
       </Fragment>
@@ -39,7 +39,6 @@ const UserDetail = (props) => {
   return (
     <article className={`${classes.userdetail} ${'centered'}`}>
       {content}
-      {/* List of repositories (repository name and description) */}
     </article>
   )
 }

@@ -1,5 +1,13 @@
-@import "styles/custom.scss";
+@import 'styles/custom.scss';
 
-.userdetail{
-    background-color: transparent;
+.userdetail {
+  background-color: transparent;
+  .details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    @media (min-width: 0) and (max-width: map-get($grid-breakpoints, md)) {
+      flex-direction: column;
+    }
+  }
 }

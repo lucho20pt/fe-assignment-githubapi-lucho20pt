@@ -6,7 +6,7 @@ const NoUser = () => {
     <Fragment>
       <h3>You haven't searched for a github username yet</h3>
       <p>
-        <Link className="btn btn-small" to="/search">
+        <Link className="btn" to="/search">
           GoTo Search Page
         </Link>
       </p>

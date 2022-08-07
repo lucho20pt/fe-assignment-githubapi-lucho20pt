@@ -11,7 +11,7 @@ const Home = () => {
           read more about the app
         </p>
         <p>
-          <Link className="btn btn-small" to="/about">
+          <Link className="btn" to="/about">
             Read About
           </Link>
         </p>
@@ -25,7 +25,7 @@ const Home = () => {
         </p>
         <p>Click on the button to test it out</p>
         <p>
-          <Link className="btn btn-small" to="/search">
+          <Link className="btn" to="/search">
             Search
           </Link>
         </p>

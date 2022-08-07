@@ -28,7 +28,7 @@ const UserDetail = (props) => {
           <Repositories repository={{ ...repository }} />
         </div>
         <p>
-          <Link className="btn btn-small" to="/search">
+          <Link className="btn" to="/search">
             Go Back to Search
           </Link>
         </p>

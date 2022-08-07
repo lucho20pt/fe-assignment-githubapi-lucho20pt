@@ -1,0 +1,54 @@
+@import 'styles/custom.scss';
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  //   max-width: 320px;
+
+  .info {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  dl {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    dt,
+    dd {
+      width: 46%;
+      padding: 0 2%;
+    }
+    dt {
+      color: $yellow;
+      text-align: right;
+      font-style: italic;
+      font-size: 1rem;
+    }
+    dd {
+      color: $white;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+  }
+  
+  .avatar_url {
+    max-width: 150px;
+    border-radius: 50%;
+  }
+  .login {
+    color: $white;
+  }
+  .name {
+    color: $white;
+  }
+  .public_repos {
+    color: $white;
+  }
+}

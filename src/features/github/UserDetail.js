@@ -2,7 +2,8 @@ import React, { Fragment } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import classes from 'styles/github/UserDetail.module.scss'
 import { useSelector } from 'react-redux'
-import NoUser from './NoUser'
+import NoUser from './user/NoUser'
+import Profile from './user/Profile'
 
 const UserDetail = (props) => {
   //
@@ -20,6 +21,9 @@ const UserDetail = (props) => {
     content = (
       <Fragment>
         <h3>A page to display the user information and repositories. </h3>
+        <div className="row-block">
+          <Profile user={{ ...user }} />
+        </div>
         <p>
           <Link className="btn btn-small" to="/search">
             Go Back
@@ -31,9 +35,8 @@ const UserDetail = (props) => {
 
   return (
     <article className={`${classes.userdetail} ${'centered'}`}>
-      id: {user.id} <br />
-      paramsID: {userId}
       {content}
+      {/* List of repositories (repository name and description) */}
     </article>
   )
 }

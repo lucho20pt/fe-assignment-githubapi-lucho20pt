@@ -4,11 +4,12 @@ import { useGetUserNameMutation } from 'features/api/githubApi'
 import { githubActions } from 'features/github/githubSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Loading from 'components/ui/Loading'
 
 const Searcher = (props) => {
   //
   const [search, setSearch] = useState('')
-  const [getUserName] = useGetUserNameMutation()
+  const [getUserName, { isLoading }] = useGetUserNameMutation()
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -57,12 +58,8 @@ const Searcher = (props) => {
 
   // Success
   const onSuccessHandler = (userId) => {
-    setTimeout(() => {
-      // clear form
-      setSearch('')
-      // navigate to User Page
-      navigate(`/user/${userId}/`)
-    }, 1)
+    setSearch('')
+    navigate(`/user/${userId}/`)
   }
 
   return (
@@ -83,6 +80,7 @@ const Searcher = (props) => {
         </div>
         {error && <p>Please enter the Github Username</p>}
       </form>
+      {isLoading && <Loading />}
     </div>
   )
 }

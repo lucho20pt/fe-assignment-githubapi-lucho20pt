@@ -5,15 +5,20 @@ export const githubApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.github.com'
   }),
-  tagTypes: ['Users'],
+  tagTypes: ['User'],
   endpoints: (builder) => ({
     getUserName: builder.mutation({
       query: (username) => ({
-        url: `users/${username}`,
+        url: `/users/${username}`,
         method: 'GET'
       })
+    }),
+    getUserRepos: builder.query({
+      query: (login) => `/users/${login}/repos`,
+      // query: ({ login }) => `/users/lucho20pt/repos`,
+      providesTags: ['User']
     })
   })
 })
 
-export const { useGetUserNameMutation } = githubApi
+export const { useGetUserNameMutation, useGetUserReposQuery } = githubApi

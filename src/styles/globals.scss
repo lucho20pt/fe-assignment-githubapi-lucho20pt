@@ -10,9 +10,10 @@ ul,li,dl,dt,dd{
 }
 
 a{ 
-  color: $orange;
+  color: $yellow;
+  text-decoration: none;
   &:hover{
-    color: $yellow;
+    color: $white;
   }
 }
 

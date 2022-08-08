@@ -17,7 +17,7 @@ const UserDetail = (props) => {
   const {
     data: repos,
     isLoading,
-    isSuccess,
+    isSuccess
     // isError,
     // error
   } = useGetUserReposQuery(user.login)

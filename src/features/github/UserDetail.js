@@ -17,9 +17,9 @@ const UserDetail = (props) => {
   const {
     data: repos,
     isLoading,
-    isSuccess
-    // isError,
-    // error
+    isSuccess,
+    isError,
+    error
   } = useGetUserReposQuery(user.login)
 
   let content
@@ -37,6 +37,7 @@ const UserDetail = (props) => {
           <Profile user={{ ...user }} />
           {isLoading && <Loading />}
           {isSuccess && <Repositories repos={repos} />}
+          {isError && <p>error found: {error.message}</p>}
         </div>
         <p>
           <Link className="btn" to="/search">

@@ -24,10 +24,13 @@
     margin-bottom: .5rem;
     dt,
     dd {
-      width: 46%;
-      padding: 0 2%;
+      width: 50%;
+      padding: 0 .5rem;
       margin-bottom: 1rem;
       font-size: 1.2rem;
+      @media (min-width: 0) and (max-width: map-get($grid-breakpoints, lg)) {
+        font-size: .9rem;
+      }
     }
     dt {
       color: $yellow;

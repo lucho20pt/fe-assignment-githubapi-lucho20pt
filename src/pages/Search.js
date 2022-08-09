@@ -1,8 +1,7 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 import Searcher from 'features/github/Searcher'
 
-const Home = () => {
+const Search = () => {
   return (
     <section className="content">
       <h1 className="title text-center">Search</h1>
@@ -12,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Search

@@ -2,7 +2,7 @@ import React from 'react'
 // import { Link } from 'react-router-dom'
 import UserDetail from 'features/github/UserDetail'
 
-const Home = () => {
+const User = () => {
   return (
     <section className="content">
       <h1 className="title text-center">User Profile</h1>
@@ -12,4 +12,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default User

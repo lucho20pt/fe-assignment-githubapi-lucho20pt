@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import classes from 'styles/github/Search.module.scss'
 import { useGetUserNameMutation } from 'features/api/githubApi'
 import { githubActions } from 'features/github/githubSlice'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
+import { useAppDispatch } from 'app/hooks'
 import { useNavigate } from 'react-router-dom'
 import Loading from 'components/ui/Loading'
 
@@ -10,7 +11,7 @@ const Searcher = (props) => {
   //
   const [search, setSearch] = useState('')
   const [getUserName, { isLoading }] = useGetUserNameMutation()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   const [error, setError] = useState(false)

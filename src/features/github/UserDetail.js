@@ -2,7 +2,8 @@ import React, { Fragment } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import classes from 'styles/github/UserDetail.module.scss'
 import { useGetUserReposQuery } from 'features/api/githubApi'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
+import { useAppSelector } from 'app/hooks'
 import NoUser from './user/NoUser'
 import Profile from './user/Profile'
 import Repositories from './user/Repositories'
@@ -10,7 +11,7 @@ import Loading from 'components/ui/Loading'
 
 const UserDetail = (props) => {
   //
-  const user = useSelector((state) => state.github.users[0])
+  const user = useAppSelector((state) => state.github.users[0])
   const params = useParams()
   const { userId } = params
 

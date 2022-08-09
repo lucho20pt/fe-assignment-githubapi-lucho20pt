@@ -1,8 +1,24 @@
+# about
+This project consists on making user requests to GithubAPI and return 
+the user profile and the repos with (name and description) \
+I could not use any UIlibrary for styling for example bootstrap
+
+## Used teck packages and choices i made
+- The Boilerplate from npx create react app \
+- react-router-dom used for routing \
+- node-sass for using scss and scss.modules \
+- we have a styles folder with a generic.scss, another _custom.scss to spread and reutilize. Each component that need it has its owen .module.scss file. It gives the capability for the classes to be unike
+- @reduxjs/toolkit & react-redux for state management creting the app/store.js and a Provider spreading the state trought the store
+- The store.js can have multiple slices as for this test is has the githubSlice and also added middleware for cache collection, automatic refetching, etc witch cames from features/api/githubApijs
+- The githubApi.js is were all happens regarding the fetching api. This great tool provides us hooks:
+- useGetUserNameMutation - to fetch the user and than is added to the store state with useDispatch and we get data from the store with the useSlice
+- useGetUserReposQuery - for fetching the user repositorys
+- githubSlice - we have the initialState and the reducer to getUser() /
+Also is great because it is using Immer to help developers with immutable state based 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
